@@ -89,7 +89,7 @@ namespace DrawerLayout
             // Render transform _listFragment
             _listFragment.HorizontalAlignment = HorizontalAlignment.Left;
             _listFragment.VerticalAlignment = VerticalAlignment.Stretch;
-            _listFragment.Width = (Window.Current.Bounds.Width/3)*2;
+            _listFragment.Width = (Window.Current.Bounds.Width);
             if (_listFragment.Background == null) _listFragment.Background = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
 
             var animatedTranslateTransform = new TranslateTransform {X = -_listFragment.Width, Y = 0};
@@ -100,16 +100,16 @@ namespace DrawerLayout
             _listFragment.UpdateLayout();
 
             // Create a shadow element
-            _shadowFragment = new Grid
-            {
-                Name = "_shadowFragment",
-                Background = new SolidColorBrush(Color.FromArgb(0, 255, 255, 255)),
-                HorizontalAlignment = HorizontalAlignment.Stretch,
-                VerticalAlignment = VerticalAlignment.Stretch,
-                Visibility = Visibility.Collapsed
-            };
-            _shadowFragment.Tapped += shadowFragment_Tapped;
-            _shadowFragment.IsHitTestVisible = false;
+            //_shadowFragment = new Grid
+            //{
+            //    Name = "_shadowFragment",
+            //    Background = new SolidColorBrush(Color.FromArgb(0, 255, 255, 255)),
+            //    HorizontalAlignment = HorizontalAlignment.Stretch,
+            //    VerticalAlignment = VerticalAlignment.Stretch,
+            //    Visibility = Visibility.Collapsed
+            //};
+            //_shadowFragment.Tapped += shadowFragment_Tapped;
+            //_shadowFragment.IsHitTestVisible = false;
 
             // Set ZIndexes
             Canvas.SetZIndex(_shadowFragment, 50);
